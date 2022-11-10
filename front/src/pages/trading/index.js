@@ -12,8 +12,21 @@ const trading = () => {
                     <Row style={{height : "70%"}}>
                         <Col>
                             <Card style={{height : "100%"}}>
-                                <Card>Bot1</Card>
-                                <Card>Bot2</Card>
+                                <Card style={{height : "20%", textAlign:'center'}}>
+                                    <h1>
+                                        Bot1
+                                    </h1>
+                                </Card>
+                                <Card style={{height : "20%", textAlign:'center'}}>
+                                    <h1>
+                                        Bot2
+                                    </h1>
+                                </Card>
+                                <Card style={{height : "20%", textAlign:'center'}}>
+                                    <h1>
+                                        Bot3
+                                    </h1>
+                                </Card>
                                 <Button>봇 추가</Button>
                                 <Button>봇 삭제</Button>
                             </Card>
@@ -35,7 +48,6 @@ const trading = () => {
                                     </tbody>
                                 </Table>
                                 <Api_modal/>
-
                             </Card>
                         </Col>
                     </Row>
@@ -110,9 +122,15 @@ const trading = () => {
                                     <td>########</td>
                                 </tr>
                             </tbody>
-                            <Back_test_modal/>
-                            <Button>수정</Button>
                         </Table>
+                        <Row>
+                            <Col style={{width:'50%'}}>
+                                <Back_test_modal/>
+                            </Col>
+                            <Col  style={{width:'50%'}}>
+                                <Button style={{width:'100%'}}>수정</Button>
+                            </Col>
+                        </Row>
                     </Card>
                 </Col>
                 <Col md={7}>
@@ -179,23 +197,23 @@ const trading = () => {
                                 "color": "hsl(49, 70%, 50%)",
                                 "data": [
                                     {
-                                        "x": "plane",
+                                        "x": "2022-07",
                                         "y": 12
                                     },
                                     {
-                                        "x": "helicopter",
+                                        "x": "2022-08",
                                         "y": 176
                                     },
                                     {
-                                        "x": "boat",
+                                        "x": "2022-09",
                                         "y": 88
                                     },
                                     {
-                                        "x": "train",
+                                        "x": "2022-10",
                                         "y": 112
                                     },
                                     {
-                                        "x": "subway",
+                                        "x": "2022-11",
                                         "y": 27
                                     },
 

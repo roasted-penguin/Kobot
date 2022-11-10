@@ -9,7 +9,7 @@ function Api_modal(args) {
 
     return (
         <div>
-            <Button onClick={toggle}>
+            <Button style={{width:'100%'}} onClick={toggle}>
                 API 관리
             </Button>
             <Modal isOpen={modal} toggle={toggle} {...args}>

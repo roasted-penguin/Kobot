@@ -26,7 +26,7 @@ const logIn = () => {
                                 <Input style={{margin:"10px"}} placeholder={"ID"}/>
                                 <Input style={{margin:"10px"}} placeholder={"PASSWORD"}/>
                             </CardText>
-                            <Button>
+                            <Button style={{margin:"10px", width:'100%'}}>
                                 <Link to={'/trading'}>login</Link>
                             </Button>
                         </CardBody>
