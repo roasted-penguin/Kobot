@@ -1,39 +1,41 @@
 package com.Kobot.api.market;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.net.URI;
 import java.net.http.*;
 
-@Controller
-@RequestMapping("/update-data")
+@RestController
+@RequestMapping("/")
 public class marketController {
 
-    @RequestMapping("minute")
-    public void main(){
+    @GetMapping("trading")
+    public String getMinute() {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.upbit.com/v1/candles/minutes/1?market=KRW-BTC&count=1"))
+                .header("accept", "application/json")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response;
 
-    }
-    HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://api.upbit.com/v1/candles/minutes/1?market=KRW-BTC&count=1"))
-            .header("accept", "application/json")
-            .method("GET", HttpRequest.BodyPublishers.noBody())
-            .build();
-    HttpResponse<String> response;
-
-    {
-        try {
-            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        {
+            try {
+                response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
-    }
+        System.out.println(response.body());
 
-    //System.out.println(response.body());
+        return response.body();
+    }
 }
 //import requests
 //        import pymysql

@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import logIn from './pages/logIn/index'
 import trading from "./pages/trading";
 import styled from "styled-components";
+import axios from 'axios';
 
 const LoginTemplate = styled.div`
   position: absolute;
@@ -18,6 +19,16 @@ const LoginTemplate = styled.div`
 `;
 
 const App = () => {
+    axios({
+        method: 'get',
+        url: '/trading'
+    })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
     return (
         <LoginTemplate>
             <Routes>
