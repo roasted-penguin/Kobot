@@ -1,4 +1,4 @@
-package com.Kobot.api.market;
+package com.Kobot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.Kobot.api.user;
+package com.Kobot.controller;
 
 public class userContorller {
 }
